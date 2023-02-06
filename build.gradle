@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.8'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    implementation 'org.projectlombok:lombok:1.18.26'
+
+    implementation 'eu.michael-simons:java-oembed:0.8.1'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+
+    // replacements for deprecated JDK module java.xml.ws
+//    runtimeOnly 'javax.xml.ws:jaxws-api:2.3.0' // javax.xml.ws.* classes
+//    runtimeOnly 'javax.jws:jsr181-api:1.0-MR1' // for javax.jws.* classes
+//
+//// replacement for deprecated JDK module java.xml.bind
+//    runtimeOnly 'javax.xml.bind:jaxb-api'
+//    runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:3.0.2'
+//    runtimeOnly 'org.glassfish:javax.json:1.1.2'
+//    runtimeOnly 'org.eclipse:yasson:1.0.1'
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
