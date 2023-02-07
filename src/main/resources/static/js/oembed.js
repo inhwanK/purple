@@ -4,15 +4,11 @@ function search() {
     $.ajax({
         type: 'GET',
         url: "/api/oembed?url=" + url,
-        // data: {"url": url},
         dataType: 'json',
         success: function (json) {
             console.log(json);
             resultHtml(json);
         },
-        // success: function (data) {
-        //     resultHtml(data);
-        // },
         error: function (error) {
             console.log(error);
         }
@@ -30,8 +26,8 @@ function resultHtml(data) {
     html += "<div>" + "<span style='background-color:#f4f4f4'>providerUrl</span><span style='background-color:#f4f4f4'>" + "<a href=" + data.providerUrl + ">" + data.providerUrl + "</a></span></div>"
     html += "<div>" + "<span>author_name</span><span>" + data.authorName + "</span></div>"
     html += "<div>" + "<span style='background-color:#f4f4f4'>author_url</span><span style='background-color:#f4f4f4'>" + "<a href=" + data.authorUrl + ">" + data.authorUrl + "</a></span></div>"
-    html += "<div>" + "<span style='height: 500px;'>html<br/>(" + data.width + "/" + data.height + ")</span>" +
-        "<span style='height: 500px;'><xmp>" + data.html + "</xmp>" + data.html + "</span></div>";
+    html += "<div>" + "<span style='height: 700px;'>html<br/>(" + data.width + "/" + data.height + ")</span>" +
+        "<span style='height: 700px;'><xmp>" + data.html + "</xmp>" + data.html + "</span></div>";
     html += "<div>" + "<span style='background-color:#f4f4f4'>width</span><span style='background-color:#f4f4f4'>" + data.width + "</span></div>"
     html += "<div>" + "<span>height</span><span>" + data.height + "</span></div>"
     html += "<div>" + "<span style='height: 500px; background-color: #f4f4f4'>thumbnail_url<br/>(" + data.thumbnailWidth + "/" + data.thumbnailHeight + ")</span><span style='height: 500px; background-color: #f4f4f4'><a href='" + data.thumbnailUrl + "'>" + data.thumbnailUrl + "</a><br/><br/><img src='" + data.thumbnailUrl + "'/></span></div>";
