@@ -18,11 +18,6 @@ public class OembedController {
 
     private final OembedService oembedService;
 
-//    @GetMapping("/")
-//    public String index() {
-//        return "/";
-//    }
-
     @ResponseBody
     @GetMapping("/oembed")
     public Optional<OembedResponse> getOembedResponse(
