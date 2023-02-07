@@ -23,8 +23,8 @@ public class OembedController {
     @GetMapping("/oembed")
     public Optional<OembedResponse> getOembedResponse(
             @RequestParam String url,
-            @RequestParam(required = false) int maxwidth,
-            @RequestParam(required = false) int minwidth,
+            @RequestParam(required = false) Integer maxwidth,
+            @RequestParam(required = false) Integer minwidth,
             @RequestParam(defaultValue = "json", required = true) String format
     ) {
 
